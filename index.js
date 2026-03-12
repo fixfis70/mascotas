@@ -79,6 +79,5 @@ app.listen(PORT, () => {
   console.log("Servidor inicializado con el puerto 22000")
 })
 
-
-console.log("node is live")
 console.log("BROEEEEEEEEEEER")
+console.log("node is live")
