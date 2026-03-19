@@ -8,9 +8,9 @@ app.use(bodyParser.json())
 
 const db = mysql.createConnection({
   host: 'fixfis.dev',
-  user: 'u13_UiS4RP9GbA',
-  password: 'n9g.TKyoCyFVIWv+2JwLP7eK',
-  database: 's13_senati'
+  user: 'u20_95Rk4e6xgI',
+  password: 'VGIuA^^LzP@ygQaMpEFhkz4!',
+  database: 's20_mascotas'
 })
 
 //DB es Mysql2
