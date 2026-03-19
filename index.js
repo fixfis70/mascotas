@@ -73,7 +73,7 @@ app.put('/mascotas/:id', (req, res) => {
   })
 })
 
-const PORT = 22000
+const PORT = 21501
 app.listen(PORT, () => {
   console.log("Servidor inicializado con el puerto 22000")
 })
