@@ -49,13 +49,13 @@ app.delete('/mascotas/:id', (req, res) => {
     if (result.affectedRows == 0) {
       return res.status(404).send({
         succes: true,
-        msg: 'Nueva mascota'
+        msg: 'Mascota eliminada'
       })
     }
 
     return res.send({
       succes: true,
-      msg: 'Nueva mascota'
+      msg: 'Mascota actualizada'
     })
   })
 })
