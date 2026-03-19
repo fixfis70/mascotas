@@ -49,23 +49,34 @@ app.delete('/mascotas/:id', (req, res) => {
     if (result.affectedRows == 0) {
       return res.status(404).send({
         succes: true,
-        msg: 'Mascota eliminada'
+        msg: 'No se encontraron mas mascotas!'
       })
     }
 
     return res.send({
       succes: true,
-      msg: 'Mascota actualizada'
+      msg: 'Mascota eliminada'
     })
   })
 })
 
 app.put('/mascotas/:id', (req, res) => {
+
   const sql = "Update mascotas set tipo =?, nombre=?,color=?,peso=? where id =?"
   const { id } = req.params
+
   const { tipo, nombre, color, peso } = req.body
+
   db.query(sql, [tipo,nombre,color,peso,id], (err, result) => {
     if (err) return res.status(500).send({ msg: 'Error acceso a datos' })
+
+    if (result.affectedRows === 0) {
+      return res.status(404).send({
+        success: false,
+        msg: 'No se encontró el registro'
+      });
+    }
+
     return res.send({
       succes: true,
       msg: 'Resgistro actualizado'
