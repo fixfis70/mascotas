@@ -64,7 +64,6 @@ app.put('/mascotas/:id', (req, res) => {
   const sql = "Update mascotas set tipo =?, nombre=?,color=?,peso=? where id =?"
   const { id } = req.params
   const { tipo, nombre, color, peso } = req.body
-
   db.query(sql, [id], (err, result) => {
     if (err) return res.status(500).send({ message: 'Error accoso a datos' })
     return res.send({
